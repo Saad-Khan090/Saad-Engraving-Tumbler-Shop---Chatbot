@@ -1,99 +1,134 @@
 # 🥤 Saad Engraving — Chatbot Setup Guide
 
-## Project Structure (Files ka Structure)
+## Project Structure
 
-```
+```text
 saad_engraving/
-├── app.py                  ← Python backend (Flask server)
-├── requirements.txt        ← Python packages list
+├── app.py                  ← Flask backend server
+├── requirements.txt        ← Required Python packages
 └── templates/
-    └── index.html          ← Chatbot ka HTML interface
+    └── index.html          ← Chatbot user interface
 ```
 
 ---
 
-## Step 1 — Python Install Karein
+## Step 1 — Install Python
 
-Pehle check karein Python install hai ya nahi.
-VS Code mein **Terminal** open karein:
-```
-View → Terminal   (ya Ctrl + `)
+First, check if Python is already installed.
+
+Open the terminal in VS Code:
+
+```text
+View → Terminal
 ```
 
-Phir yeh command run karein:
+or press:
+
+```text
+Ctrl + `
+```
+
+Run:
+
 ```bash
 python --version
 ```
 
-Agar version show na ho, Python install karein:
-👉 https://www.python.org/downloads/
-(Install karte waqt **"Add Python to PATH"** wala checkbox zaroor tick karein)
+If Python is not installed, download it from:
+
+https://www.python.org/downloads/
+
+While installing, make sure to check:
+
+```text
+✔ Add Python to PATH
+```
 
 ---
 
-## Step 2 — Project Folder VS Code mein Open Karein
+## Step 2 — Open the Project Folder
 
-1. VS Code open karein
-2. `File → Open Folder`
-3. `saad_engraving` folder select karein
-4. Terminal open karein: `Ctrl + `` (backtick)
+1. Open VS Code
+2. Click **File → Open Folder**
+3. Select the **saad_engraving** folder
+4. Open the terminal
 
 ---
 
-## Step 3 — Flask Install Karein
+## Step 3 — Install Flask
 
-Terminal mein yeh command chalayein:
+Run:
+
 ```bash
 pip install flask
 ```
 
-Ya requirements file se:
+Or install all required packages from the requirements file:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## Step 4 — Chatbot Run Karein
+## Step 4 — Run the Chatbot
+
+Start the Flask server:
 
 ```bash
 python app.py
 ```
 
-Yeh output aayega:
-```
- * Running on http://127.0.0.1:5000
- * Debug mode: on
+You should see:
+
+```text
+* Running on http://127.0.0.1:5000
+* Debug mode: on
 ```
 
 ---
 
-## Step 5 — Browser mein Kholein
+## Step 5 — Open in Browser
 
-Browser mein jaayein aur type karein:
-```
+Open your browser and visit:
+
+```text
 http://127.0.0.1:5000
 ```
 
-**Chatbot ready hai! 🎉**
+The chatbot is now ready to use. 🎉
 
 ---
 
-## Customize Karna (Optional)
+## Customization (Optional)
 
-### Business info update karna:
-`app.py` file mein:
-- **WhatsApp number** update karein: `0333-1234567` replace karein apne number se
-- **Instagram handle** update karein: `@SaadEngraving`
-- **Email** update karein: `info@saadengraving.pk`
-- **Prices** update karein KB dictionary mein
+### Update Business Information
 
-### Naya sawaal/jawab add karna:
-`app.py` mein `KB` list mein naya entry add karein:
+Open **app.py** and update:
+
+* WhatsApp number
+* Instagram handle
+* Email address
+* Product prices
+
+Example:
+
+```python
+whatsapp = "0333-1234567"
+instagram = "@SaadEngraving"
+email = "info@saadengraving.pk"
+```
+
+---
+
+### Add New Questions and Answers
+
+Inside the `KB` list, add a new entry:
+
 ```python
 {
     "keys": ["keyword1", "keyword2"],
-    "a": "Yahan apna jawab likhein"
+    "a": "Write your answer here"
 },
 ```
 
@@ -101,15 +136,21 @@ http://127.0.0.1:5000
 
 ## Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| `python` command nahi mila | Python install karein + PATH check karein |
-| `flask` not found | `pip install flask` dobara run karein |
-| Port already in use | `app.py` mein `port=5001` add karein |
-| Page nahi khul raha | `http://127.0.0.1:5000` check karein (https nahi, http hai) |
+| Problem                    | Solution                                        |
+| -------------------------- | ----------------------------------------------- |
+| `python` command not found | Install Python and check PATH settings          |
+| `flask` not found          | Run `pip install flask`                         |
+| Port already in use        | Change the port number in `app.py`              |
+| Website not opening        | Make sure you are using `http://127.0.0.1:5000` |
 
 ---
 
-## Band Karna
+## Stop the Server
 
-Terminal mein `Ctrl + C` press karein.
+Press:
+
+```text
+Ctrl + C
+```
+
+in the terminal to stop the chatbot.
